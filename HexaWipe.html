@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <title>HexaWipe PDF Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 60px auto;
+            padding: 20px;
+            background: #f5f3fb;
+            border-radius: 12px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+            text-align: center;
+        }
+        h1 {
+            color: #6d5fa3;
+        }
+        input[type="file"] {
+            margin: 20px 0;
+        }
+        button {
+            background-color: #7b65c5;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #5e4fa1;
+        }
+        #message {
+            margin-top: 30px;
+            font-size: 1.2rem;
+            color: #42355c;
+            min-height: 60px;
+        }
+        #message.error {
+            color: #d45252;
+        }
+        #message.success {
+            color: #4b7a4b;
+        }
+    </style>
+</head>
+<body>
+    <h1>HexaWipe PDF Verification</h1>
+    <form id="verifyForm">
+        <input type="file" id="pdfInput" accept="application/pdf" />
+        <br/>
+        <button type="submit">Verify</button>
+    </form>
+    <div id="message"></div>
+
+    <script>
+        const form = document.getElementById('verifyForm');
+        const pdfInput = document.getElementById('pdfInput');
+        const messageDiv = document.getElementById('message');
+
+        form.addEventListener('submit', event => {
+            event.preventDefault();
+            messageDiv.className = '';
+            messageDiv.textContent = '';
+
+            if(pdfInput.files.length === 0) {
+                messageDiv.classList.add('error');
+                messageDiv.textContent = 'Please upload a PDF file.';
+                return;
+            }
+
+            const file = pdfInput.files[0];
+            if(file.name === 'certificate.pdf') {
+                messageDiv.classList.add('success');
+                messageDiv.textContent = 'Verification done. Correct PDF. HexaWipe is the one who wiped it.';
+            } else {
+                messageDiv.classList.add('error');
+                messageDiv.textContent = 'Incorrect PDF file. Please upload the correct certificate.pdf.';
+            }
+        });
+    </script>
+</body>
+</html>
+
