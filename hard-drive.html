@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HexaWipe - Hard Drive</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <nav class="sidebar">
+        <ul>
+            <li>
+                <a href="hard-drive.html" class="active">
+                    <img src="images/hard_disk.png" alt="Hard Drive Icon" class="icon-img">
+                    <span class="text">Hard Drive</span>
+                </a>
+            </li>
+            <li>
+                <a href="ssd.html">
+                    <img src="images/solid_drive.png" alt="Solid State Drive Icon" class="icon-img">
+                    <span class="text">Solid State Drive</span>
+                </a>
+            </li>
+            <li>
+                <a href="android.html">
+                    <img src="images/mobile.png" alt="Android Icon" class="icon-img">
+                    <span class="text">Android</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <main class="main-content">
+        <header>
+          <a href=index.html> <h1>HexaWipe</h1> </a>
+        </header>
+        <section class="drive-section">
+            <div class="label-title">
+                <img src="images/hard_disk.png" alt="Hard Drive Icon" class="section-icon">
+                Hard Drive
+            </div>
+            <form>
+                <div class="form-row">
+                    <label for="driveSelect" class="dropdown-label">Drive</label>
+                    <select id="driveSelect" class="dropdown">
+                        <option>sda (476.9 GB)</option>
+                        <option>sdb (238.5 GB)</option>
+                        <option>nmve0n1 (247.3 GB)</option>
+                    </select>
+                </div>
+                <div class="wipe-controls">
+                    <div class="toggle-group">
+                        <label class="toggle-label" for="recursiveWipe">Recursive Wipe</label>
+                        <label class="switch">
+                            <input type="checkbox" id="recursiveWipe" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <button type="button" class="wipe-btn">
+                        <img src="images/trash.png" alt="Wipe Icon" class="wipe-icon">
+                        <span class="wipe-text">WIPE</span>
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+</div>
+</body>
+</html>
+
