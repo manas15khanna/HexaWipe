@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HexaWipe - Android</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <nav class="sidebar">
+        <ul>
+            <li>
+                <a href="hard-drive.html">
+                    <img src="images/hard_disk.png" alt="Hard Drive Icon" class="icon-img">
+                    <span class="text">Hard Drive</span>
+                </a>
+            </li>
+            <li>
+                <a href="ssd.html">
+                    <img src="images/solid_drive.png" alt="Solid State Drive Icon" class="icon-img">
+                    <span class="text">Solid State Drive</span>
+                </a>
+            </li>
+            <li>
+                <a href="android.html" class="active">
+                    <img src="images/mobile.png" alt="Android Icon" class="icon-img">
+                    <span class="text">Android</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <main class="main-content android-content">
+        <header>
+            <h1>HexaWipe</h1>
+        </header>
+        <section class="android-buttons-vertical">
+            <button class="wide-btn" onclick="location.href='format-guide.html'">
+                Format Guide
+            </button>
+            <div class="arrow">&#8595;</div>
+            <button class="wide-btn" onclick="alert('Connecting to ADB, filling with random files, then wipe')">
+                Connect to ADB & Wipe
+            </button>
+            <div class="arrow">&#8595;</div>
+            <button class="wide-btn" onclick="location.href='format-guide.html'">
+                Wipe Again
+            </button>
+        </section>
+    </main>
+</div>
+</body>
+</html>
+

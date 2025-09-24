@@ -10,13 +10,13 @@
     <nav class="sidebar">
         <ul>
             <li>
-                <a href="hard-drive.html" class="active">
+                <a href="hard-drive.html">
                     <img src="images/hard_disk.png" alt="Hard Drive Icon" class="icon-img">
                     <span class="text">Hard Drive</span>
                 </a>
             </li>
             <li>
-                <a href="ssd.html">
+                <a href="ssd.html" class="active">
                     <img src="images/solid_drive.png" alt="Solid State Drive Icon" class="icon-img">
                     <span class="text">Solid State Drive</span>
                 </a>
@@ -35,8 +35,8 @@
         </header>
         <section class="drive-section">
             <div class="label-title">
-                <img src="images/hard_disk.png" alt="Hard Drive Icon" class="section-icon">
-                Hard Drive
+                <img src="images/solid_drive.png" alt="Hard Drive Icon" class="section-icon">
+                Solid State Drive
             </div>
             <form>
                 <div class="form-row">
@@ -48,18 +48,11 @@
                     </select>
                 </div>
                 <div class="wipe-controls">
-                    <div class="toggle-group">
-                        <label class="toggle-label" for="recursiveWipe">Recursive Wipe</label>
-                        <label class="switch">
-                            <input type="checkbox" id="recursiveWipe" checked>
-                            <span class="slider"></span>
-                        </label>
                     </div>
-                    <a href="wipe-progress.html" <button type="button" class="wipe-btn">
+                    <button type="button" class="wipe-btn">
                         <img src="images/trash.png" alt="Wipe Icon" class="wipe-icon">
                         <span class="wipe-text">WIPE</span>
-                    </button> 
-                    </a>
+                    </button>
                 </div>
             </form>
         </section>

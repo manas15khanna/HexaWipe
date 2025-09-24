@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>HexaWipe - Wiping Drive</title>
+    <style>
+        body, html {
+            margin: 0; padding: 0; height: 100%;
+            background-color: black;
+            color: #00FF00;
+            font-family: monospace, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #console {
+            background-color: #000000;
+            border: 1px solid #00FF00;
+            padding: 20px;
+            width: 600px;
+            height: 300px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div id="console"></div>
+    <script>
+    const consoleDiv = document.getElementById('console');
+
+    const messages = [
+        "Starting wipe process...",
+        "Step 1: Clean all partitions",
+        "Step 2: Create new partition",
+        "Step 3: Use shred for hd0",
+        "Progress: [                                                  ] 0%"
+    ];
+
+    let progress = 0;
+    let blocks = 50;
+    let blockChar = '#';
+    let interval;
+
+    function printLine(text) {
+        consoleDiv.textContent += text + '\n';
+        consoleDiv.scrollTop = consoleDiv.scrollHeight;
+    }
+
+    function updateProgress() {
+    if (progress <= blocks) {
+        let bar = blockChar.repeat(progress);
+        let spaces = " ".repeat(blocks - progress);
+        consoleDiv.textContent = messages.slice(0,4).join('\n') + '\n' + `Progress: [${bar}${spaces}] ${(progress*2)}%`;
+        consoleDiv.scrollTop = consoleDiv.scrollHeight;
+        progress++;
+    } else {
+        clearInterval(interval);
+        printLine("Return Drive HD0 wiped");
+        setTimeout(() => {
+            window.open('certificate.pdf', '_blank');  // open pdf in new tab
+            window.location.href = 'index.html';       // redirect current tab to home
+        }, 500);
+    }
+}
+
+    messages.slice(0,4).forEach(msg => printLine(msg));
+
+    setTimeout(() => {
+        interval = setInterval(updateProgress, 160);
+    }, 1000);
+</script>
+ 
+</body>
+</html>
+
